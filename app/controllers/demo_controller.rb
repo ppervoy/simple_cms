@@ -1,4 +1,7 @@
 class DemoController < ApplicationController
-  def index
-  end
+
+	layout false
+
+	def index
+	end
 end
