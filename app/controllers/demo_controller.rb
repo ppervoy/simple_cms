@@ -5,7 +5,7 @@ class DemoController < ApplicationController
 	def index
 		#render(:template => 'demo/hello')
 		#render('demo/hello')
-		render('hello')
+		#render('hello')
 	end
 
 	def hello
