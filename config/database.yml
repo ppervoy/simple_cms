@@ -21,7 +21,7 @@ development:
   adapter: mysql2
   database: simple_cms_development
   username: simple_cms
-  secretpassword: password
+  secretpassword: 123
   <<: *default
   socket: /tmp/mysql.sock
 
