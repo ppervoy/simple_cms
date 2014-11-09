@@ -37,6 +37,13 @@ class SubjectsController < ApplicationController
 
 
   def delete
+    @subject = Subject.find(params[:id])  
+  end
+
+  def destroy
+    s = Subject.find(params[:id]).destroy
+    
+    redirect_to(:action=>'index')
   end
 
   private
