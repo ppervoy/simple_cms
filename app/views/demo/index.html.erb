@@ -6,3 +6,11 @@
 <%= link_to('HP2', {:action => 'hello'}) %><br>
 
 <%= link_to('Params', {:action => 'hello', :page=>"123", :id=>20}) %>
+
+<hr>
+<% n = "Kevin"%>
+<% n = "Sorry!'); alert('I hacked you!!!"%>
+
+<%= link_to('Roar', '#', :onclick=>"jsRoar('JavaScipt'); return true;") %>
+
+<%= javascript_tag("jsRoar('#{j(n)}');") %>
