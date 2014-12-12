@@ -9,7 +9,6 @@ class AdminUser < ActiveRecord::Base
 	has_many :sections, :through => :section_edits
 
 	EMAIL_REGEX = /\A[a-z)-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
-
 	FORBIDDEN_USERNAMES = ["littlebopeep", "humptydumpty", "marymary"]
 
 	# validates_presence_of :first_name
@@ -45,6 +44,12 @@ class AdminUser < ActiveRecord::Base
 		 if FORBIDDEN_USERNAMES.include?(username)
 		 	errors.add(:username, "has been restricted from use!!! ")
 		 end
+	end
+
+	scope :sorted, lambda { order("last_name ASC, first_name ASC")}
+
+	def name
+		return "#{first_name} #{last_name}"
 	end
 
 	def no_new_users_on_saturdays
