@@ -6,6 +6,8 @@
 	<h2>Pages</h2>
 	<%= link_to("Add new page", {:action=>"new", :subject_id => @subject.id}, :class => "action new") %>
 
+	<div><%= pluralize(@pages.size, 'page') %> found</div>
+
 	<table class="listing" summary="Page list">
 		<tr class="header">
 			<th>&nbsp;</th>
@@ -23,8 +25,9 @@
 			<td><%= page.name %></td>
 			<td><%= page.permalink %></td>
 			<td class="center"><%= status_tag(page.visible) %></td>
-			<td class="center">0</td>
+			<td class="center"><%= page.sections.count %></td>
 			<td class="actions">
+				<%= link_to("View sections", {:controller => 'sections', :page_id => page.id}, :class => "action show") %>
 				<%= link_to("Show", {:action => "show", :subject_id => @subject.id, :id=>page.id}, :class => "action show") %>
 				<%= link_to("Edit", {:action => "edit", :subject_id => @subject.id, :id=>page.id}, :class => "action edit") %>
 				<%= link_to("Del", {:action=>"delete", :subject_id => @subject.id, :id=>page.id}, :class => "action delete") %>
