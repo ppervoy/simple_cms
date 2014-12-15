@@ -1,0 +1,14 @@
+<% @page_title = @page.name %>
+
+<h2><%= @page.name %></h2>
+
+<% @page.sections.visible.sorted.each do |s|%>
+	<div class="section">
+		<% case s.content_type %>
+		<% when 'HTML' %>
+			<%= raw(sanitize(s.content, :tags=>['strong', 'em', 'a'])) %>
+		<% when 'text' %>
+			<p><%= s.content %></p>
+		<% end %>
+	</div>
+<% end %>
