@@ -19,7 +19,7 @@ default: &default
 
 development:
   adapter: mysql2
-  database: simple_cms_development
+  database: simple_cms2_development
   username: simple_cms
   secretpassword: 123
   <<: *default
