@@ -31,4 +31,10 @@ class DemoController < ApplicationController
 
 	def escape_output
 	end
+
+	def make_error
+		#render(:text => "test"
+		#render(:text => @something.upcase)
+		#render(:text => "1" + 1)
+	end
 end
