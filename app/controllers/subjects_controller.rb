@@ -6,6 +6,7 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.sorted
+    puts "\n\n***>>>***\n" + @subjects.inspect + "\n***<<<***\n\n"
   end
 
   def show
